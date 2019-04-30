@@ -21,11 +21,17 @@ public class MyHeap{
       break;
     }
   }
-  private static void pushUp(int[]data,int index)
+  private static void pushUp(int[]data,int index){
+    boolean isDone = true;
+    int Parent = data[index];
+    
+  }
   public static void heapify(int[]){
     for (int i = data.length / 2; i >= 0; i--){
       pushDown(data,data.length,i);
     }
   }
-  public static void heapsort(int[])
+  public static void heapsort(int[]){
+
+  }
 }
