@@ -17,7 +17,9 @@ public class MyHeap{
         index = RChild;
       }
     }
-
+    if (max == data[index]){
+      break;
+    }
   }
   private static void pushUp(int[]data,int index)
   public static void heapify(int[])
