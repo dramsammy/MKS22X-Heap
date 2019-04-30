@@ -24,7 +24,9 @@ public class MyHeap{
   private static void pushUp(int[]data,int index){
     boolean isDone = true;
     int Parent = data[index];
-    
+    if (data[index] > data[index - 1]){
+      
+    }
   }
   public static void heapify(int[]){
     for (int i = data.length / 2; i >= 0; i--){
