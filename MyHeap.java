@@ -25,15 +25,22 @@ public class MyHeap{
     boolean isDone = true;
     int Parent = data[index];
     if (data[index] > data[index - 1]){
-      
+
     }
   }
   public static void heapify(int[]){
-    for (int i = data.length / 2; i >= 0; i--){
+    for (int i = data.length - 1; i >= 0; i--){
       pushDown(data,data.length,i);
     }
   }
   public static void heapsort(int[]){
-
+    heapify(data);
+    for (int i = data.length - 1; i >= 0; i--){
+      int temp = data[0];
+      data[0] = data[i];
+      data[i] = temp;
+      size--;
+      pushDown(data, size, 0);
+    }
   }
 }
