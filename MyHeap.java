@@ -1,4 +1,9 @@
 public class MyHeap{
+  public static void swap(int[] data, int a, int b){
+    int temp = data[a];
+    data[a] = data[b];
+    data[b] = temp;
+  }
 
   private static void pushDown(int[]data,int size,int index){
     // need while here
@@ -29,18 +34,15 @@ public class MyHeap{
     }
   }
   public static void heapify(int[]){
-    for (int i = data.length - 1; i >= 0; i--){
+    for (int i = data.length - 2 / 2; i >= 0; i--){
       pushDown(data,data.length,i);
     }
   }
   public static void heapsort(int[]){
     heapify(data);
-    for (int i = data.length - 1; i >= 0; i--){
-      int temp = data[0];
-      data[0] = data[i];
-      data[i] = temp;
-      size--;
-      pushDown(data, size, 0);
+    for (int i = data.length - 1; i > 0; i--){
+      swap(data,0,y);
+      pushDown(data, y, 0);
     }
   }
 }
