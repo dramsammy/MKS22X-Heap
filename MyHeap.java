@@ -10,23 +10,38 @@ public class MyHeap{
     if (index >= data.length || index < 0){
       throw new IllegalArgumentException(); // new exception if out of bounds
     }
+    //int midpoint = (2 * index) + 1;
     int LChild = index * 2 + 1;
     int RChild = index * 2 + 2;
-    int max = Math.max(Math.max(data[index], data[LChild]), data[RChild]);
-    if (max != data[index]){
-      if (max == data[LChild]){
-        data[LChild] = data[index];
-        data[index] = max;
-        index = LChild;
-      }
-      if (max == data[RChild]){
-        data[RChild] = data[index];
-        data[index] = max;
-        index = RChild;
-      }
+    int workingValue = data[index];
+
+  //  int max = Math.max(Math.max(data[index], data[LChild]), data[RChild]);
+  //  if (max != data[index]){
+  //    if (max == data[LChild]){
+  //      data[LChild] = data[index];
+  //      data[index] = max;
+  //      index = LChild;
+  //    }
+  //    if (max == data[RChild]){
+  //      data[RChild] = data[index];
+  //      data[index] = max;
+  //      index = RChild;
+  //    }
+  //  }
+  //  if (max == data[index]){
+  //    break;
+  //  }
+  int max;
+  if (RChild < size){
+    max = Math.max(Math.max(data[index], data[LChild]), data[RChild]);
+
+  }
     }
-    if (max == data[index]){
-      break;
+    if (LChild < size && RChild >= size && data[midpoint] > data[index]){
+      swap(data, LChild, index);
+    }
+    else{
+
     }
   }
   private static void pushUp(int[]data,int index){
