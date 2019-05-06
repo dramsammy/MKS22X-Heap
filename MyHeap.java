@@ -6,7 +6,10 @@ public class MyHeap{
   }
 
   private static void pushDown(int[]data,int size,int index){
-    // need while here
+    // exception needed
+    if (index >= data.length || index < 0){
+      throw new IllegalArgumentException(); // new exception if out of bounds
+    }
     int LChild = index * 2 + 1;
     int RChild = index * 2 + 2;
     int max = Math.max(Math.max(data[index], data[LChild]), data[RChild]);
@@ -27,14 +30,21 @@ public class MyHeap{
     }
   }
   private static void pushUp(int[]data,int index){
-    boolean isDone = true;
-    int Parent = data[index];
-    if (data[index] > data[index - 1]){
-
+//    boolean isDone = true;
+  //  int Parent = data[index];
+    //if (data[index] > data[index - 1]){
+    if (index >= data.length || index < 0){
+      throw new IllegalArgumentException(); // new exception if out of bounds
+    }
+    int tall = (index - 1)/2;
+    if (data[index] > data[tall] && index != 0){
+      swap(data, tall, index); // switches them around
+      pushUp(data, tall); // recursive call
+    }
     }
   }
   public static void heapify(int[]){
-    for (int i = data.length - 2 / 2; i >= 0; i--){
+    for (int i = (data.length - 2) / 2; i >= 0; i--){
       pushDown(data,data.length,i);
     }
   }
